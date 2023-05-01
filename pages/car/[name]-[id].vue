@@ -1,3 +1,15 @@
+<script setup>
+const route = useRoute();
+useHead({
+  title: capitalizeTitle(route.params.name),
+});
+
+function capitalizeTitle(e) {
+  return e.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+</script>
 <template>
   <div>
     <Navbar />
