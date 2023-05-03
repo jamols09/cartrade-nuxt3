@@ -6,6 +6,10 @@ useHead({
     route.params.make ? capitalizeTitle(route.params.make) : "Cars"
   } in ${capitalizeTitle(route.params?.city)}`,
 });
+
+definePageMeta({
+  layout: "custom",
+});
 </script>
 <template>
   <div class="mt-32 flex">
