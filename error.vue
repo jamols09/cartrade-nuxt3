@@ -1,7 +1,10 @@
 <script setup>
 const error = useError();
 const onHandleError = () => {
-  navigateTo("/");
+  //   navigateTo("/");
+  clearError({
+    redirect: "/",
+  });
 };
 </script>
 <template>
