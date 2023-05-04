@@ -9,7 +9,7 @@ const props = defineProps({
     @click="navigateTo(`/car/${car.name}-${car.id}`)"
   >
     <div class="flex h-full">
-      <img :src="car.url" alt="" class="w-[300px] h-full" />
+      <NuxtImg :src="car.url" alt="" class="w-[300px] h-full" />
       <div class="p-4 flex flex-col">
         <div>
           <h1 class="text-2xl text-blue-700">{{ car.name }}</h1>
