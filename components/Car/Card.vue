@@ -4,10 +4,7 @@ import heartOutline from "@/assets/heartOutline.png";
 
 const props = defineProps({
   car: Object,
-});
-
-const favored = useState(`favored-${props.car.id}`, () => {
-  return false;
+  favored: Boolean,
 });
 </script>
 <template>
@@ -17,7 +14,7 @@ const favored = useState(`favored-${props.car.id}`, () => {
     <img
       :src="favored ? heartFilled : heartOutline"
       class="absolute w-7 right-5 top-2 z-20"
-      @click="favored = !favored"
+      @click="$emit('favor', car.id)"
     />
     <div class="flex h-full" @click="navigateTo(`/car/${car.name}-${car.id}`)">
       <NuxtImg :src="car.url" alt="" class="w-[300px] h-full" />
