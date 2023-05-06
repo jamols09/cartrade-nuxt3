@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CarCard />
+    <CarCards />
   </div>
   <!-- CARS PAGE -->
 </template>

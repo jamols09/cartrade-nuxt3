@@ -1,6 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     modules: [
-        "@nuxtjs/tailwindcss"
-    ]
-})
+        "@nuxtjs/tailwindcss",
+        "@nuxt/image-edge",
+        '@nuxt/devtools',
+        '@vueuse/nuxt',
+    ],
+    devtools: {
+        // Enable devtools (default: true)
+        enabled: true,
+    }
+});
