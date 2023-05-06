@@ -6,7 +6,7 @@ const logout = async () => {
   // 1) make user.value = null
   // 2) remove jwt from cookies
 
-  //   const { error } = supabase.auth.signOut();
+    const { error } = supabase.auth.signOut();
   //   if (error) {
   //     console.log(error);
   //   }
