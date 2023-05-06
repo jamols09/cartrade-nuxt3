@@ -5,6 +5,7 @@ export default defineNuxtConfig({
         "@nuxt/image-edge",
         '@nuxt/devtools',
         '@vueuse/nuxt',
+        '@nuxtjs/supabase'
     ],
     devtools: {
         // Enable devtools (default: true)
