@@ -1,23 +1,12 @@
 <script setup>
 const route = useRoute();
-const { cars } = useCars();
+
+const { data: car } = await useFetchCar(route.params.id);
+
 const { capitalizeTitle } = useUtilities();
 useHead({
   title: capitalizeTitle(route.params.name),
 });
-
-const car = computed(() => {
-  return cars.find((c) => {
-    return c.id === parseInt(route.params.id);
-  });
-});
-
-if (!car.value) {
-  throw createError({
-    statusCode: 404,
-    message: `Car with ID of ${route.params.id} does not exist`,
-  });
-}
 
 definePageMeta({
   layout: "custom",
@@ -25,9 +14,9 @@ definePageMeta({
 </script>
 <template>
   <div>
-    <CarDetailHero />
-    <CarDetailAttribute />
-    <CarDetailDescription />
+    <CarDetailHero :car="car" />
+    <CarDetailAttribute :features="car.features" />
+    <CarDetailDescription :description="car.description" />
     <CarDetailContact />
   </div>
 </template>
